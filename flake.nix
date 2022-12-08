@@ -6,10 +6,7 @@
   outputs = inputs:
   let
     system = "x86_64-linux";
-    pkgs = import inputs.nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-    };
+    pkgs = import inputs.nixpkgs { inherit system; };
     dependencies = with pkgs; [
       jsonnet-bundler
       kind
@@ -21,6 +18,7 @@
   {
     devShells.${system}.default = pkgs.mkShell {
       packages = dependencies;
+      KUBECONFIG = ".kubecfg";
     };
   };
 }
