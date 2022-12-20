@@ -6,7 +6,7 @@ local ns = "cert-manager";
 
 {
   certmanagerNs: k.core.v1.namespace.new(ns),
-  certmanager: helm.template("cert-manager", "./charts/cert-manager", {
+  certmanager: helm.template("cert-manager", "../../charts/cert-manager", {
     namespace: ns,
     values: {
       prometheus: { enabled: false },
