@@ -6,7 +6,7 @@
   },
   "spec": {
     "contextNames": [
-      "kind-kind"
+      "kind-k8s-tanka-starter"
     ],
     "namespace": "default",
     "resourceDefaults": {},
