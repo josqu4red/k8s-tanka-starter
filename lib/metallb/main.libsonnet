@@ -12,20 +12,26 @@ local ns = 'metallb';
   metalNs: k.core.v1.namespace.new(ns),
   metalCertIssuer: issuer.new('webhook-server-cert-issuer')
                    + issuer.metadata.withNamespace(ns)
-                   + { spec: { selfSigned: {}}},
+                   + { spec: { selfSigned: {} } },
 
   metalCert: cert.new('webhook-server-cert')
              + cert.metadata.withNamespace(ns)
-             + cert.spec.withCommonName('metallb-webhook-service.default.svc')
+             + cert.spec.withCommonName('metallb-webhook-service.' + ns + '.svc')
              + cert.spec.withSecretName('webhook-server-cert')
              + cert.spec.withDnsNames([
-                          'metallb-webhook-service.default.svc.cluster.local',
-                          'metallb-webhook-service.default.svc'
-                        ])
+               'metallb-webhook-service.' + ns + '.svc.cluster.local',
+               'metallb-webhook-service.' + ns + '.svc',
+             ])
              + cert.spec.issuerRef.withKind('Issuer')
              + cert.spec.issuerRef.withName('webhook-server-cert-issuer'),
 
   metal: helm.template('metallb', '../../charts/metallb', {
     namespace: ns,
-  }),
+  }) + {
+    service_metallb_webhook_service+: {
+      metadata+: {
+        namespace: ns,
+      },
+    },
+  },
 }
