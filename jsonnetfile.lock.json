@@ -50,6 +50,16 @@
       },
       "version": "610803705e9ec295ef2e4eeaa6b2f8fc1419e5b1",
       "sum": "67P8R8DnfIL1v+z+KThW2kIATcwn591elT5YiWZ1j/s="
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/jsonnet-libs/traefik-libsonnet.git",
+          "subdir": ""
+        }
+      },
+      "version": "a2957dfd48a0d72695234ac7649d587af955d4a5",
+      "sum": "Hu4XQWSsxo6qO6DNMHhY96yreEJqNlsXlr/FuLfUvWk="
     }
   ],
   "legacyImports": false

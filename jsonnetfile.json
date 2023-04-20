@@ -45,6 +45,15 @@
         }
       },
       "version": "main"
+    },
+    {
+      "source": {
+        "git": {
+          "remote": "https://github.com/jsonnet-libs/traefik-libsonnet.git",
+          "subdir": ""
+        }
+      },
+      "version": "main"
     }
   ],
   "legacyImports": true
