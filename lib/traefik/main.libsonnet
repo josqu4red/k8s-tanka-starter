@@ -4,17 +4,12 @@ local helm = tanka.helm.new(std.thisFile);
 
 local ns = 'traefik';
 
+(import './config.libsonnet') +
 {
   traefikNs: k.core.v1.namespace.new(ns),
   traefik: helm.template('traefik', '../../charts/traefik', {
     namespace: ns,
     includeCrds: true,
-    values: {
-      ingressRoute: {
-        dashboard: {
-          enabled: false,
-        },
-      },
-    },
+    values: $._config.traefik,
   }),
 }

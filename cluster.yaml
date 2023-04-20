@@ -13,9 +13,9 @@ kubeadmConfigPatches:
 nodes:
 - role: control-plane
   extraPortMappings:
-  - containerPort: 80
+  - containerPort: 32080
     hostPort: 8080
     protocol: TCP
-  - containerPort: 443
+  - containerPort: 32443
     hostPort: 8443
     protocol: TCP
