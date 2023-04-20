@@ -54,6 +54,16 @@
     {
       "source": {
         "git": {
+          "remote": "https://github.com/jsonnet-libs/prometheus-operator-libsonnet.git",
+          "subdir": ""
+        }
+      },
+      "version": "8665ba0fa4f1a4b0c96929485a2d3b952d23806a",
+      "sum": "E+vR9PUPvHQWnyhiUyerKUqPdKUGGSrJ2wugU48qa8c="
+    },
+    {
+      "source": {
+        "git": {
           "remote": "https://github.com/jsonnet-libs/traefik-libsonnet.git",
           "subdir": ""
         }
