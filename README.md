@@ -8,6 +8,7 @@
 ### Bootstrap
 
 ```sh
+jb install                                                        # Install jsonnet deps
 tk tool charts vendor                                             # Vendor required helm charts
 kind create cluster --config cluster.yaml --kubeconfig .kubecfg   # Create local cluster
 tk apply environments/kind                                        # Create resources in cluster
